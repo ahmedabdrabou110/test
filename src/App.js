@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import AuthentiactionEmail from './components/AuthentiactionEmail'
+import AuthentiactionPhone from './components/AuthentiactionPhone'
 
-function App() {
+const App = () => {
+    const [showOTP,setShowOTP] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+        {
+            showOTP ? <AuthentiactionEmail /> :
+            <AuthentiactionPhone />
+        }
+    </>
+  )
 }
 
-export default App;
+export default App
